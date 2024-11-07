@@ -12,3 +12,11 @@ for (let i = 0; i<16; i++) {
     }
     container.appendChild(row);
 }
+
+const grids = document.querySelectorAll('#col');
+
+grids.forEach((grid) => {
+    grid.addEventListener('mouseover', () => {
+        grid.style.background = 'red';
+    })
+})
