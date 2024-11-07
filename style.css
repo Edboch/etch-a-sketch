@@ -1,13 +1,20 @@
 body {
     box-sizing: border-box;
 }
+.container {
+    width: 960px;
+    height: 960px;
+    display: flex;
+    flex-direction: column;
+}
 
 #row {
     display: flex;
+    flex: auto;
 }
+
 #col {
-    width: 10px;
-    height: 10px;
     border: 1px solid black;
+    flex: auto;
 }
 
