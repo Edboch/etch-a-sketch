@@ -1,4 +1,4 @@
-const container = document.querySelector('.container');
+const grid = document.querySelector('.grid');
 const resize = document.querySelector('#resize');
 const colourBtn = document.querySelector('#random-colour');
 let colour  = randomColour();
@@ -11,7 +11,7 @@ resize.addEventListener('click',() => {
     drawGrid(squares);
 })
 
-container.addEventListener('mouseover',(event) =>{
+grid.addEventListener('mouseover',(event) =>{
     event.target.setAttribute('style',`background-color: ${colour};`);
 })
 
@@ -20,7 +20,7 @@ colourBtn.addEventListener('click', () => {
 })
 
 function clearGrid() {
-    container.innerHTML = '';
+    grid.innerHTML = '';
 }
 
 function drawGrid(squares) {
@@ -32,7 +32,7 @@ function drawGrid(squares) {
             col.setAttribute('id','col');
             row.appendChild(col);
         }
-        container.appendChild(row);
+        grid.appendChild(row);
     }
     
 }
