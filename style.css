@@ -59,12 +59,12 @@ button {
     background-color: var(--text-colour);
 }
 
-#row {
+.row {
     display: flex;
     flex: auto;
 }
 
-#col {
+.col {
     border: 1px solid black;
     flex: auto;
 }

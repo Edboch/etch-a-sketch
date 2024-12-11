@@ -1,8 +1,11 @@
 const grid = document.querySelector('.grid');
-const resize = document.querySelector('#resize');
-const colourBtn = document.querySelector('#random-colour');
+const eraseBtn = document.querySelector('.resize');
+const colourBtn = document.querySelector('.random-colour');
+const clearBtn = document.querySelector('.clear')
+const eraserBtn = document.querySelector('.eraser');
 let colour  = randomColour();
 let mouseHold = false;
+let squares = 16;
 
 document.body.onmousedown = (event) => {
     mouseHold = true;
@@ -11,11 +14,11 @@ document.body.onmousedown = (event) => {
 document.body.onmouseup = () => {mouseHold = false};
 
 // Initial Grid
-drawGrid(16,16);
+drawGrid(squares);
 
 // Event Listeners
-resize.addEventListener('click',() => {
-    let squares = prompt('How many squares do you want on each side?');
+eraseBtn.addEventListener('click',() => {
+    squares = prompt('How many squares do you want on each side?');
     clearGrid();
     drawGrid(squares);
 })
@@ -27,6 +30,15 @@ colourBtn.addEventListener('click', () => {
     colour = randomColour();
 })
 
+clearBtn.addEventListener('click',() => {
+    clearGrid();
+    drawGrid(squares);
+})
+
+eraserBtn.addEventListener('click',()=> {
+    colour = 'rbg(255,255,255)';
+})
+
 // Functions
 function clearGrid() {
     grid.innerHTML = '';
@@ -35,10 +47,10 @@ function clearGrid() {
 function drawGrid(squares) {
     for (let i = 0; i<squares; i++) {
         const row = document.createElement('div');
-        row.setAttribute('id','row');
+        row.className = 'row';
         for (let j = 0; j<squares; j++) {
             const col = document.createElement('div');
-            col.setAttribute('id','col');
+            col.className = 'col';
             row.appendChild(col);
         }
         grid.appendChild(row);
