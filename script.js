@@ -1,5 +1,5 @@
 const grid = document.querySelector('.grid');
-const eraseBtn = document.querySelector('.resize');
+const resizeBtn = document.querySelector('.resize');
 const colourBtn = document.querySelector('.random-colour');
 const clearBtn = document.querySelector('.clear')
 const eraserBtn = document.querySelector('.eraser');
@@ -17,8 +17,9 @@ document.body.onmouseup = () => {mouseHold = false};
 drawGrid(squares);
 
 // Event Listeners
-eraseBtn.addEventListener('click',() => {
+resizeBtn.addEventListener('click',() => {
     squares = prompt('How many squares do you want on each side?');
+    grid.style = '';
     clearGrid();
     drawGrid(squares);
 })
@@ -31,6 +32,7 @@ colourBtn.addEventListener('click', () => {
 })
 
 clearBtn.addEventListener('click',() => {
+    grid.style = '';
     clearGrid();
     drawGrid(squares);
 })
