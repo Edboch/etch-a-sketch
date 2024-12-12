@@ -1,11 +1,13 @@
 :root {
     --main-colour: #e54b4b;
     --bkgd-colour: #8aafc5;
-    --text-colour:  #f7ebe8;
+    --bkgd-shadow: #3e535e;
+    --button-shadow: #6d0808;
+    --secondary-colour:  #f7ebe8;
     
 }
 
-body {
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -14,49 +16,65 @@ body {
     min-height: 100vh;
     background-color: var(--bkgd-colour);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
 .container {
+    width: 1100px;
     display: flex;
-    gap:5vw;
+    justify-content: start;
+    align-items: center;
+    gap: 50px;
+
 }
 
 .buttons {
-    padding: 32px;
+    width: 250px;
+    height: 250px;
+    padding: 24px;
     border: 1px solid var(--main-colour);
-    border-radius: 10px;
     background-color: var(--main-colour);
+    box-shadow: var(--bkgd-shadow) 0 2px 5px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
 
 }
 
 button {
-    border-radius: 5px;
-    border: 1px solid var(--text-colour);
-    background-color: var(--main-colour);
-    color: var(--text-colour);
+    border: 2px solid #e77272;
+    background-color: #e77272;
+    color: var(--secondary-colour);
+    box-shadow: var(--button-shadow) 0 2px 5px;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 14px;
 }
 
+button:active {
+    background-color: var(--secondary-colour);
+    color: var(--main-colour);
+    transform: translateY(3px);
+}
+
+
 .grid-wrapper {
+    box-shadow: var(--bkgd-shadow) 0 2px 5px;
     background-color: var(--main-colour);
     border-radius: 10px;
-    padding: 32px;
-    margin: 0 auto;
+    padding: 25px;
 }
 
 .grid {
     padding: 0;
     margin: 0;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     display: flex;
     flex-direction: column;
-    background-color: var(--text-colour);
+    background-color: var(--secondary-colour);
 }
 
 .row {
@@ -65,7 +83,7 @@ button {
 }
 
 .col {
-    border: 1px solid black;
+    border: 1px solid rgb(70, 70, 70);
     flex: auto;
 }
 
